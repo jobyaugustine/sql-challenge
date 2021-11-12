@@ -3,6 +3,7 @@ DROP TABLE IF EXISTS Employee;
 DROP TABLE IF EXISTS DeptEmp;
 DROP TABLE IF EXISTS Departments;
 DROP TABLE IF EXISTS Dept_Manager;
+DROP TABLE IF EXISTS Salaries;
 DROP TABLE IF EXISTS Titles;
 
 -- Create new table
@@ -17,15 +18,11 @@ CREATE TABLE Employee (
   
 );
 
-
-
 CREATE TABLE DeptEmp (
   emp_no int NOT NULL references Employee(emp_no),
-  dept_no VARCHAR
+  dept_no VARCHAR(25)
   
 );
-
-
 
 CREATE TABLE Departments (
   dept_no VARCHAR(25) Primary key NOT NULL,
@@ -33,22 +30,17 @@ CREATE TABLE Departments (
   
 );
 
-
-DROP TABLE IF EXISTS Dept_Manager;
 CREATE TABLE Dept_Manager (
-  dept_no VARCHAR NOT NULL,
+  dept_no VARCHAR(25) NOT NULL,
   emp_no int
   
 );
 
-DROP TABLE IF EXISTS Salaries;
 CREATE TABLE Salaries (
   emp_no int NOT NULL,
-  salary VARCHAR
+  salary decimal
   
 );
-
-
 
 CREATE TABLE Titles (
   title_id VARCHAR NOT NULL,
